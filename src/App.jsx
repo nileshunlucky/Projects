@@ -1,19 +1,16 @@
-import './App.css'
-import Footer from './Components/Footer'
-import Home from './Components/Home'
-import Navbar from './Components/Navbar'
-import { useState } from 'react'
-
+// App.jsx
+import { Outlet } from 'react-router-dom';
+import Navbar from './Components/Navbar';
+import Footer from './Components/Footer';
 
 function App() {
-  const [cart, setCart] = useState(0);
   return (
-    <>
-      <Navbar cart={cart} />
-      <Home  cart={cart} setCart={setCart}/>
+    <div>
+      <Navbar />
+      <Outlet />
       <Footer />
-    </>
-  )
+    </div>
+  );
 }
 
-export default App
+export default App;

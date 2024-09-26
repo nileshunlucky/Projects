@@ -1,6 +1,8 @@
 import React, { useState } from 'react'
+import { useSelector } from 'react-redux'
 
 const Navbar = ({ cart }) => {
+    const count = useSelector((state)=> state.counter.value)
     const [toggle, setToggle] = useState(false)
     function toggleHandler() {
         setToggle(!toggle)
@@ -37,7 +39,7 @@ const Navbar = ({ cart }) => {
                     </div>
                     <div className="cart-bukket-icon relative">
                         <img className='h-[50px]' src="kfc bakket.svg" alt="kfc-bukket" />
-                        <span className='absolute top-[19px] left-[16px] text-[12px] font-bold w-[17px] text-center'>{cart}</span>
+                        <span className='absolute top-[19px] left-[16px] text-[12px] font-bold w-[17px] text-center'>{count}</span>
                     </div>
                 </div>
             </div>

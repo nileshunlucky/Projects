@@ -6,7 +6,8 @@ const CategoryCards = () => {
         {
             id: 1,
             img: 'https://orderserv-kfc-assets.yum.com/15895bb59f7b4bb588ee933f8cd5344a/images/categories/CAT289.jpg?ver=53.39',
-            title: 'INTERNATIONAL BURGER FEST'
+            title: 'INTERNATIONAL BURGER FEST',
+            link:'/product'
         },
         {
             id: 2,
@@ -48,7 +49,7 @@ const CategoryCards = () => {
         <div className='browse-categories-card grid lg:grid-cols-4 grid-cols-2 m-[12px] gap-3'>
             {categories.map((category) => (
                 <div key={category.id} className='bg-zinc-100 cursor-pointer'>
-                    <a href="#">
+                    <a href={category.link}>
                         <div className="card-image">
                             <img className='md:h-[180px] w-full' src={category.img} alt={category.title} />
                         </div>

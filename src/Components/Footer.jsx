@@ -1,11 +1,13 @@
 import React from 'react'
-
+import { useDispatch } from 'react-redux'
+import { decrement, increment , incrementByAmount } from '../counter/counter'
 const Footer = () => {
+    const dispatch = useDispatch()
     const year = new Date().getFullYear()
     return (
         <footer className='site-footer bg-black text-white md:px-[70px] md:pt-[70px] p-[10px]'>
             <div className="row row-1 text-center md:flex justify-evenly items-start my-[50px] md:space-y-0 space-y-5">
-                <div className="kfc-logo flex justify-center items-center">
+                <div onClick={() => dispatch(increment())} className="kfc-logo flex justify-center items-center cursor-pointer">
                     <img src="https://images.ctfassets.net/wtodlh47qxpt/25FSYFuEtGct8NSrtpKe6d/b602f6fe0bf294e6a6dff5d7648bf594/KFC_Logo.svg" alt="kfc-logo" />
                 </div>
                 <div className="catorgory-items flex justify-between items-start gap-5 md:ml-[25px]">
